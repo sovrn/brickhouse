@@ -4,11 +4,56 @@
 
     <groupId>com.klout</groupId>
     <artifactId>brickhouse</artifactId>
-    <version>0.7.1-SNAPSHOT</version>
+    <version>0.7.1</version>
     <packaging>jar</packaging>
     <name>Brickhouse</name>
     <description>Extensions of Hive for the Data Developer</description>
     <url>https://github.com/klout/brickhouse</url>
+
+  <scm>
+    <connection>scm:git:git@github.com/sovrn/brickhouse.git</connection>
+    <developerConnection>scm:git:git@github.com/sovrn/brickhouse.git</developerConnection>
+    <url>https://github.com/sovrn/brickhouse</url>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>deployment</id>
+      <name>Internal Releases</name>
+      <url>http://nexus1.dfw2.lijit.com/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>deployment</id>
+      <name>Internal Releases</name>
+      <url>http://nexus1.dfw2.lijit.com/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>lijit-nexus</id>
+      <url>http://nexus1.dfw2.lijit.com/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>lijit-nexus-plugins</id>
+      <url>http://nexus1.dfw2.lijit.com/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
     <issueManagement>
         <url>https://github.com/klout/brickhouse/issues</url>
@@ -22,12 +67,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <scm>
-        <url>https://github.com/klout/brickhouse</url>
-        <connection>scm:git:git://github.com/klout/brickhouse.git</connection>
-        <developerConnection>scm:git:git@github.com:klout/brickhouse.git</developerConnection>
-    </scm>
 
     <developers>
         <developer>
@@ -250,30 +289,4 @@
 
 
     </dependencies>
-
-    <!--
-       <distributionManagement>
-         <repository>
-           <id>sonatype-nexus-staging</id>
-            <name>Nexus Staging Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-         </repository>
-     </distributionManagement>
-     -->
-
-
-    <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>maven-repo-releases</name>
-            <url>http://maven.klout:8081/artifactory/libs-release-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>maven-repo-snapshots</name>
-            <url>http://maven.klout:8081/artifactory/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-
 </project>
